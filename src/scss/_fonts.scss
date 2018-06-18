@@ -1,0 +1,30 @@
+/*
+  Primary Font Glober
+  not included for this test
+*/
+@font-face {
+  font-family: 'Glober';
+  src: url("fonts/glober_regular.eot");
+  src: url("fonts/glober_regular.eot?#iefix") format('embedded-opentype'), url("fonts/glober_regular.woff2") format('woff2'), url("fonts/glober_regular.woff") format('woff'), url("fonts/glober_regular.ttf") format('truetype'), url("fonts/glober_regular.svg#fonts/Glober") format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Glober';
+  src: url("fonts/glober_medium.eot");
+  src: url("fonts/glober_medium.eot?#iefix") format('embedded-opentype'), url("fonts/glober_medium.woff2") format('woff2'), url("fonts/glober_medium.woff") format('woff'), url("fonts/glober_medium.ttf") format('truetype'), url("fonts/glober_medium.svg#fonts/Glober") format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Glober';
+  src: url("fonts/glober_bold.eot");
+  src: url("fonts/glober_bold.eot?#iefix") format('embedded-opentype'), url("fonts/glober_bold.woff2") format('woff2'), url("fonts/glober_bold.woff") format('woff'), url("fonts/glober_bold.ttf") format('truetype'), url("fonts/glober_bold.svg#fonts/Glober") format('svg');
+  font-weight: 900;
+  font-style: bold;
+}
+/*
+  Fallback Google Font Roboto
+  import with <link> instead
+  @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+*/

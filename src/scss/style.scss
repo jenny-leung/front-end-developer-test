@@ -1,0 +1,546 @@
+@import 'fonts'; // import Glober font
+// @import 'variables';
+@import 'mixins';
+
+%box-shadow {
+  box-shadow: 0 0 5px 2px #ccc;
+}
+$teal-blue: #008ba4;
+$seafoam-blue: #54b8cd;
+$fern-green: #4c813d;
+$orange: #e87b15;
+$black: #000;
+$white: #fff;
+
+body {
+  font-family: 'Glober', 'Roboto', sans-serif;
+  //font-size: 16px;
+  background-color: $black;
+  min-width: 320px;
+}
+
+strong {
+  font-weight: 900;
+}
+
+a {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+ol {
+  margin-left: 10px;
+}
+
+main {
+  a {
+    color: $seafoam-blue;
+    text-decoration: underline;
+
+    &:hover {
+      color: $teal-blue;
+    }
+  }
+}
+
+footer {
+  margin: 40px 20px;
+  font-size: 16px;
+  text-align: center;
+
+  .row {
+    margin-top: 20px;
+  }
+
+  #navbarMenuFooter {
+    display: inline-block;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .nav-link {
+    padding: 5px;
+    color: #888;
+  }
+
+  .nav-item {
+    float: left;
+
+    & + .nav-item {
+      border-left: 2px solid $black;
+    }
+  }
+}
+
+.container {
+  &--white {
+    background-color: $white;
+  }
+}
+
+#copyright,
+#navbarText {
+  color: $black;
+
+  a {
+    color: $seafoam-blue;
+  }
+}
+
+#copyright {
+  display: block;
+}
+
+.navbar-text-contact {
+  font-size: 16px;
+  display: block;
+  position: relative;
+  padding-left: 25px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 21px;
+    height: 21px;
+    background-image: url("./../img/phone-icon.png");
+  }
+}
+
+.row {
+  margin-top: 40px;
+}
+
+.jumbotron {
+  border-radius: 0;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 15px;
+  padding: 30px 20px;
+
+  &__img {
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__text {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 40px;
+    color: $white;
+    @include sm {
+      text-align: center;
+    }
+
+    .text-center {
+      display: block;
+    }
+  }
+}
+
+.col__btn {
+  width: 245px;
+  max-width: 245px;
+  margin: 0 auto;
+}
+
+.border {
+  &--green {
+    border: 20px solid $fern-green;
+    border-image: url("./../img/green.jpg") 20 round;
+    padding: 20px;
+  }
+}
+
+.bg {
+  &--white {
+    background-color: $white;
+  }
+
+  &--green {
+    background-color: $fern-green;
+    color: $white;
+    padding: 10px;
+  }
+}
+
+.img {
+  &--center {
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.text {
+  &--orange {
+    color: $orange;
+  }
+
+  &--teal-blue {
+    color: $teal-blue;
+  }
+
+  &--seafoam-blue {
+    color: $seafoam-blue;
+  }
+
+  &--bigger {
+    display: inherit;
+    font-size: 1.5em;
+    line-height: 1.2;
+  }
+
+  &--fancy {
+    position: relative;
+    letter-spacing: 2.7px;
+
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      width: 68px;
+      height: 2px;
+      background-color: $white;
+      border: solid 1px $white;
+      top: 50%;
+    }
+
+    &:before {
+      margin-left: -(68px + 2.7px*2);
+    }
+
+    &:after {
+      margin-right: -(68px + 2.7px*2);
+    }
+  }
+}
+
+.product {
+  max-width: 276px;
+  padding: 20px 15px;
+  //margin: 35px 15px 15px 50px;
+  margin: 35px auto;
+  background-color: $white;
+  @extend %box-shadow;
+  //box-sizing: content-box;
+  text-align: center;
+  position: relative;
+
+  &:after {
+    content: attr(data-discount) '% OFF';
+    position: absolute;
+    top: -35px;
+    right: -35px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: $orange;
+    color: $white;
+    @extend %box-shadow;
+    line-height: 1.2;
+    padding: 10px;
+  }
+
+  &__group {
+    margin-top: 40px;
+  }
+
+  &__img {
+    margin: 0;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__pop {
+    border-color: $teal-blue;
+    border-style: solid;
+    border-width: 30px 10px 10px;
+    max-width: 296px;
+
+    &:before {
+      content: 'Most Popular';
+      text-transform: uppercase;
+      position: absolute;
+      top: -30px;
+      left: 0;
+      font-size: 20px;
+      color: $white;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  &__supply {
+    font-size: 25px;
+  }
+
+  &__descr {
+    font-size: 18px;
+    color: $teal-blue;
+  }
+
+  &__price {
+    position: relative;
+    padding: 15px;
+  }
+
+  &__usd {
+    font-weight: 900;
+    font-size: 34px;
+    display: block;
+
+    &:before {
+      content: '$';
+      font-size: 20px;
+      vertical-align: text-top;
+    }
+
+    &:after {
+      content: 'USD';
+      font-size: 15px;
+      display: inline;
+      vertical-align: middle;
+      text-decoration: underline;
+    }
+  }
+
+  &__each {
+    font-weight: 900;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("./../img/highlight.jpg");
+
+    &:before {
+      content: 'Only $';
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    &:after {
+      content: '/Day!';
+      font-weight: 400;
+    }
+  }
+}
+
+.btn {
+  &__link {
+    color: $seafoam-blue;
+  }
+
+  &__add-to-cart {
+    background-color: #38a33f;
+    border-bottom: 5px solid #24875b;
+    color: $white;
+    width: 184px;
+    margin-left: 38px;
+    position: relative;
+    text-decoration: none;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: -25%;
+      width: 76px;
+      height: 76px;
+      background-image: url("./../img/7-year-guarantee.png");
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 30%;
+      margin-left: 15px;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid $white;
+    }
+
+    &:hover {
+      color: $white;
+      background-color: #24875b;
+    }
+  }
+}
+
+.nutrition {
+  max-width: 336px;
+  margin: 10px auto;
+
+  h3 {
+    text-align: center;
+    font-weight: 900;
+  }
+
+  &__header {
+    border: 2px solid $black;
+    border-bottom-width: 10px;
+    text-align: center;
+
+    p {
+      text-align: left;
+      margin: 0;
+      padding: 5px;
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1;
+    }
+  }
+
+  &__table {
+    border: 2px solid $black;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  &__fact {
+    display: block;
+    font-size: 14px;
+
+    &:before {
+      content: '(as ';
+    }
+
+    &:after {
+      content: ')';
+    }
+
+    &--from {
+      &:before {
+        content: '(from ';
+      }
+    }
+
+    &--mg {
+      &:after {
+        content: 'mg'!important;
+      }
+    }
+  }
+
+  &__section {
+    border-top-width: 10px!important;
+
+    td {
+      &:last-child {
+        text-align: left!important;
+
+        &:after {
+          content: ''!important;
+        }
+      }
+    }
+  }
+
+  thead {
+    border-bottom: 5px solid $black;
+  }
+
+  tr {
+    width: 100%;
+    border-top: 1px solid #000;
+  }
+
+  td,
+  th {
+    font-weight: 400;
+    text-align: left;
+    vertical-align: top;
+    padding: 5px;
+
+    &:first-child {
+      width: 70%;
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  td {
+    font-weight: 900;
+
+    &:last-child {
+      &:after {
+        content: '%';
+      }
+    }
+  }
+}
+
+.profile {
+  &__img {
+    width: 190px;
+    height: auto;
+  }
+
+  &__caption {
+    margin: 5px auto;
+    padding-top: 10px;
+    line-height: 1.1;
+    width: 190px;
+    border-top: 2px solid $black;
+  }
+}
+
+.feature {
+  &__logo {
+    padding: 15px;
+
+    &__caption {
+      font-size: 12px;
+      line-height: 1.1;
+      display: inline-block;
+      vertical-align: middle;
+
+      & > strong {
+        font-size: 14px;
+
+        &:first-child {
+          font-style: italic;
+        }
+      }
+    }
+  }
+}
+
+#wrapper {}
+
+#banner {
+  background-image: url("./../img/green.jpg");
+  @include md {
+    background-image: url("./../img/green@2x.jpg");
+  }
+  @include xl {
+    background-image: url("./../img/green@3x.jpg");
+  }
+}
+
+#guarantee {
+  margin: 0 auto;
+
+  p {
+    line-height: 1.1;
+  }
+}
+
+#seen {
+  @extend %box-shadow;
+}
+
+#guaranteeModal {
+  img {
+    max-width: 100%;
+  }
+}

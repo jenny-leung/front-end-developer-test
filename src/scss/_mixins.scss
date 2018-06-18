@@ -1,0 +1,21 @@
+// Bootstrap container max-widths
+@mixin sm {
+  @media (min-width: 540px) {
+    @content;
+  }
+}
+@mixin md {
+  @media (min-width: 720px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: 960px) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: 1140px) {
+    @content;
+  }
+}
