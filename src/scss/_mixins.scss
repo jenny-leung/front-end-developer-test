@@ -1,4 +1,4 @@
-// Bootstrap container max-widths
+// Bootstrap container min-widths
 @mixin sm {
   @media (min-width: 540px) {
     @content;
@@ -16,6 +16,12 @@
 }
 @mixin xl {
   @media (min-width: 1140px) {
+    @content;
+  }
+}
+// custom max-widths
+@mixin underline-max {
+  @media (max-width: 376px) {
     @content;
   }
 }

@@ -1,11 +1,9 @@
 $(document).ready(() => {
 
   $.getJSON('https://www.algaecal.com/wp-json/acf/v3/options/options').done(data => {
-    //console.log(data.acf);
     /*
     get the company phone number (default_phone_number) and to show the message ‘Speak to Our Bone Specialist’ if and only if the current time is within working hours.
     */
-    //console.log(data.acf.office_hours);
     const currentDate = new Date();
     const currentHour = currentDate.getHours();
     const currentMin = currentDate.getMinutes();
@@ -18,9 +16,7 @@ $(document).ready(() => {
     const closingHour = parseInt(closingTime.slice(0, 2));
     const closingMin = parseInt(closingTime.slice(2));
 
-    // console.log(currentDate, currentDay, currentHour, currentMin);
-    // console.log(startingTime, startingHour, startingMin);
-    // console.log(closingTime, closingHour, closingMin);
+
     if (currentHour >= startingHour && currentMin > startingMin) {
       if (currentHour < closingHour || (currentHour == closingHour && currentMin < closingMin)) {
         const phone = data.acf.default_phone_number;
@@ -28,9 +24,6 @@ $(document).ready(() => {
       }
     }
 
-    /*
-     link in the guarantee should trigger a bootstrap modal popup with the content from the 7 year guarantee long form found here: https://www.algaecal.com/wp-json/acf/v3/options/options
-    */
   });
 
   /*
@@ -41,7 +34,6 @@ $(document).ready(() => {
     id: "cecdwaq3dz",
     onReady: video => {
       video.bind("secondchange", s => {
-        //console.log("the second changed to " + s);
         // show products when pass 2:13
         $('#products').hide();
 

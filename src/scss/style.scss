@@ -121,7 +121,7 @@ footer {
   margin-left: -15px;
   margin-right: -15px;
   margin-bottom: 15px;
-  padding: 30px 20px;
+  padding: 20px 15px;
 
   &__img {
     background-size: cover;
@@ -129,7 +129,7 @@ footer {
   }
 
   &__text {
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 500;
     line-height: 40px;
     color: $white;
@@ -192,13 +192,22 @@ footer {
 
   &--bigger {
     display: inherit;
-    font-size: 1.5em;
-    line-height: 1.2;
+    font-size: 1.3em;
+    line-height: 1.1;
+  }
+
+  &--underline {
+    @include underline-max {
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-image: url("./../img/underline.png");
+    }
   }
 
   &--fancy {
     position: relative;
     letter-spacing: 2.7px;
+    line-height: 1.5;
 
     &:after,
     &:before {
